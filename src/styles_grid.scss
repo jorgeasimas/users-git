@@ -1,0 +1,134 @@
+.wrapper {
+  display: grid;
+  height: 80vh;
+  margin: 0.5em;
+  width: max(700px);
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+  grid-template-rows: 0.5fr 5fr;
+  grid-template-areas:
+    "Form"
+    "Card";
+}
+
+.card {
+  display: grid;
+  height: 65vh;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  color: white;
+  background: #1d2d53;
+  grid-template-areas:
+    "card-container name"
+    "card-container name"
+    "card-container container"
+    "card-container location";
+}
+
+.card-container {
+  grid-area: card-container;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+  img {
+    position: relative;
+    margin: 0.5em;
+    border-radius: 100px;
+    width: 280px;
+    height: 150px;
+    top: 2em;
+  }
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.name {
+  grid-area: name;
+
+  p {
+    position: relative;
+    font-size: 1.5em;
+    top: 1.5em;
+  }
+}
+.container {
+  grid-area: container;
+}
+
+.insideContainer {
+  margin-right: 1.5em;
+  padding: 0.2em;
+  border-radius: 1em;
+  background-color: #121c33;
+  grid-area: container;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.location {
+  grid-area: location;
+  a:link {
+    color: white;
+    text-decoration: none;
+  }
+  a:visited {
+    color: white;
+  }
+}
+
+.inputForm {
+  display: grid;
+  height: 10vh;
+  grid-gap: 0.5em;
+  background: #1d2d53;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "form-input Bsubmit";
+}
+
+.form-input {
+  grid-area: form-input;
+  margin: 0.5em;
+}
+
+.Bsubmit {
+  grid-area: Bsubmit;
+  margin: 0.5em;
+  letter-spacing: 0.1em;
+  background-color: #478be4;
+  color: white;
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    margin: 1em;
+    width: max(470px);
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas:
+      "Form"
+      "card";
+  }
+  .card {
+    display: grid;
+    height: 70vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 2em;
+    grid-gap: 2em;
+    color: white;
+    background: #1d2d53;
+    grid-template-areas:
+      "card-container"
+      "name"
+      "container"
+      "location";
+  }
+}
